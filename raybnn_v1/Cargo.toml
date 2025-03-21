@@ -1,0 +1,119 @@
+[package]
+name = "raybnn"
+version = "0.1.5"
+authors = ["test <test@gmail.com>"]
+edition = "2021"
+description = "RayBNN"
+readme = "README.md"
+repository = "https://github.com/"
+keywords = ["neuralnetworks","gpu","cpu","CUDA","OpenCL"]
+license = "GPL-3.0-only"
+categories = ["science"]
+
+
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+arrayfire = { version = "3.8.1", package = "arrayfire_fork", features = ["algorithm", "arithmetic", "blas", "data", "indexing", "graphics", "image", "lapack",
+"ml", "macros", "random", "signal", "sparse", "statistics", "vision","afserde"] }
+num = "0.4.0"
+rand = "0.8.5"
+rayon = "1.7.0"
+half = { version = "2.2.1" , features = ["num-traits"] }
+hostname = "0.3.1"
+ndarray-npy = "0.8.1"
+ndarray = "0.15.6"
+nohash-hasher = "0.2.0"
+serde = { version = "1.0", features = ["derive"] }
+csv = "1.1"
+
+[dev-dependencies]
+arrayfire = { version = "3.8.1", package = "arrayfire_fork", features = ["algorithm", "arithmetic", "blas", "data", "indexing", "graphics", "image", "lapack",
+"ml", "macros", "random", "signal", "sparse", "statistics", "vision","afserde"] }
+num = "0.4.0"
+rand = "0.8.5"
+rayon = "1.7.0"
+half = { version = "2.2.1" , features = ["num-traits"] }
+hostname = "0.3.1"
+ndarray-npy = "0.8.1"
+ndarray = "0.15.6"
+nohash-hasher = "0.2.0"
+serde = { version = "1.0", features = ["derive"] }
+
+
+[build-dependencies]
+arrayfire = { version = "3.8.1", package = "arrayfire_fork", features = ["algorithm", "arithmetic", "blas", "data", "indexing", "graphics", "image", "lapack",
+"ml", "macros", "random", "signal", "sparse", "statistics", "vision","afserde"] }
+num = "0.4.0"
+rand = "0.8.5"
+rayon = "1.7.0"
+half = { version = "2.2.1" , features = ["num-traits"] }
+hostname = "0.3.1"
+ndarray-npy = "0.8.1"
+ndarray = "0.15.6"
+nohash-hasher = "0.2.0"
+serde = { version = "1.0", features = ["derive"] }
+
+[lib]
+name = "raybnn"
+path = "src/lib.rs"
+
+
+
+[[example]]
+name = "figure1b"
+path = "examples/figure1b.rs"
+
+
+
+[[example]]
+name = "figure2a"
+path = "examples/figure2a.rs"
+
+
+[[example]]
+name = "figure2b"
+path = "examples/figure2b.rs"
+
+
+
+[[example]]
+name = "figure2c"
+path = "examples/figure2c.rs"
+
+
+[[example]]
+name = "figure2d"
+path = "examples/figure2d.rs"
+
+[[example]]
+name = "figure2e"
+path = "examples/figure2e.rs"
+
+[[example]]
+name = "figure2f"
+path = "examples/figure2f.rs"
+
+
+[[example]]
+name = "figure3a"
+path = "examples/figure3a.rs"
+
+
+
+[[example]]
+name = "figure3b"
+path = "examples/figure3b.rs"
+
+[[example]]
+name = "figure3d"
+path = "examples/figure3d.rs"
+
+
+
+
+[[example]]
+name = "figure4_raybnn"
+path = "examples/figure4_raybnn.rs"
