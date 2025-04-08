@@ -52,7 +52,7 @@ fn main() {
     let batch_size: u64 = 1000;
     let traj_size: u64 = 1;
     let proc_num: u64 = 5;
-    let dir_path: String = "/scratch/lain1385/project/raybnn_v1/temp".to_string();
+    let dir_path: String = "./temp".to_string();
 
     let mut arch_search = raybnn::interface::automatic_f32::create_start_archtecture2(
         input_size,
@@ -87,7 +87,7 @@ fn main() {
     arrayfire::sync(DEVICE);
     arrayfire::device_gc();
     arrayfire::sync(DEVICE);
-
+    
     let mut RSSI_TESTX = TOTAL_RSSI_TESTX.clone();
 
     let TOTAL_RSSI_TRAINX = raybnn::export::dataloader_f32::file_to_hash_cpu(
@@ -224,4 +224,5 @@ fn main() {
     write_csv(&output_test_y, file_path);
 
     println!("Data saved to {}", file_path);
+    
 }

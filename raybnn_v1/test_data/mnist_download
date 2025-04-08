@@ -1,0 +1,24 @@
+from keras.datasets import mnist
+import numpy as np
+
+(train_X, train_y), (test_X, test_y) = mnist.load_data()
+train_X = train_X.reshape((train_X.shape[0], 28*28))
+test_X = test_X.reshape((test_X.shape[0], 28*28))
+
+# map tarin_y and test_y to 10 classes
+train_y = np.eye(10)[train_y]
+test_y = np.eye(10)[test_y]
+
+#normalize
+train_X = train_X/255
+test_X = test_X/255
+
+print(train_X.shape)
+print(train_y.shape)
+print(test_X.shape)
+print(test_y.shape)
+
+np.savetxt('./mnist/mnist_train_X.dat', train_X, fmt = '%.8f',delimiter=',')
+np.savetxt('./mnist/mnist_train_y.dat', train_y, fmt = '%.8f',delimiter=',')
+np.savetxt('./mnist/mnist_test_X.dat', test_X, fmt = '%.8f',delimiter=',')
+np.savetxt('./mnist/mnist_test_y.dat', test_y, fmt= '%.8f',delimiter=',')
