@@ -3,3 +3,6 @@ target/
 *.dat
 *.png
 *.fig
+out_report/*
+temp/*
+test_data/mnist/*
